@@ -16,6 +16,7 @@ class Page(TemplateClass):
     menu = models.ManyToManyField('Menu', verbose_name='меню', blank=True)
     categories = models.ManyToManyField('Category', verbose_name='категория')
     image = models.ImageField('изображение', upload_to='page_images/', height_field=None, width_field=None, max_length=100, blank=True)
+    show_on_home = models.BooleanField('на главную', default=False, help_text='Показать на гланой странице')
     draft = models.BooleanField('черновик', default=False)
     
 

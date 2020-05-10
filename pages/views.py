@@ -3,10 +3,10 @@ from django.views.generic.base import View
 
 from .models import Page
 
-class PagesView(View):
+class PagesHomeView(View):
     def get(self, request):
-        pages = Page.objects.all()
-        return render(request, 'pages/pages_list.html', {'pages_list': pages})
+        pages = Page.objects.filter(show_on_home=True)
+        return render(request, 'pages/pages_home.html', {'pages_list': pages})
         
 
 
